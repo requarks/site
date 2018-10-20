@@ -1,0 +1,12 @@
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  background-color: mc('grey', '800');
+  height: 50px;
+  transition: background-color 1s linear;
+  color: #FFF;
+  display: none;
+
+}

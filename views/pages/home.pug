@@ -1,0 +1,20 @@
+extends ../layout.pug
+
+block content
+  .hero
+    .hero-frame
+      include ../../assets/svg/logo.svg
+      h2 Open source applications for teams
+    .hero-apps
+      a(href='https://wiki.js.org')
+        include ../../assets/svg/app-wikijs.svg
+        h3 Next-generation wiki app built on Node.js and Git
+        h4 wiki.js.org
+      a(href='https://github.com/requarks/connect-loki')
+        include ../../assets/svg/app-connectloki.svg
+        h3 A Loki.js session store for Connect/Express
+        h4 github.com/requarks/connect-loki
+      a(href='https://github.com/requarks/express-brute-loki')
+        include ../../assets/svg/app-bruteloki.svg
+        h3 A Loki.js store for Express-Brute
+        h4 github.com/requarks/express-brute-loki

@@ -1,0 +1,42 @@
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  height: 100px;
+  background-color: mc('grey', '100');
+  border-top: 1px solid mc('grey', '300');
+  padding: 0 1rem;
+
+  &-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    width: 100%;
+    color: mc('grey', '600');
+    font-size: .8rem;
+  }
+
+  &-text {
+    flex: 0 1 70vw;
+  }
+
+  &-links {
+    flex: 0 1 30vw;
+    text-align: right;
+
+    a {
+      @include until($desktop) {
+        display: block;
+      }
+    }
+
+    a + a {
+      margin-left: 1rem;
+
+      @include until($desktop) {
+        margin-top: .5rem;
+      }
+    }
+  }
+}

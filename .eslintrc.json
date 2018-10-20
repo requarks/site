@@ -1,0 +1,18 @@
+{
+  "extends": "standard",
+  "env": {
+    "node": true,
+    "es6": true,
+    "jest": true
+  },
+  "globals": {
+    // Client
+    "document": false,
+    "navigator": false,
+    "window": false,
+    "FuseBox": false
+  },
+  "rules": {
+    "space-before-function-paren": 0
+  }
+}

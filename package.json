@@ -1,0 +1,62 @@
+{
+  "name": "requarks.io",
+  "version": "1.0.0",
+  "description": "requarks.io",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "build": "node fuse",
+    "dev": "node fuse -d",
+    "test": "exit 0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "ssh://requarks@requarks.visualstudio.com:22/_git/requarks.io"
+  },
+  "author": "Nicolas Giard",
+  "license": "ISC",
+  "dependencies": {
+    "auto-load": "~3.0.0",
+    "bluebird": "~3.5.0",
+    "body-parser": "~1.18.1",
+    "bunyan": "~1.8.10",
+    "bunyan-debug-stream": "~1.0.8",
+    "compression": "~1.7.0",
+    "cookie-parser": "~1.4.3",
+    "express": "~4.15.3",
+    "express-session": "~1.15.3",
+    "fs-extra": "~4.0.2",
+    "js-yaml": "~3.10.0",
+    "lodash": "~4.17.4",
+    "moment": "~2.18.1",
+    "moment-timezone": "~0.5.13",
+    "pug": "~2.0.0-rc.2",
+    "serve-favicon": "~2.4.3"
+  },
+  "devDependencies": {
+    "babel-cli": "~6.26.0",
+    "babel-plugin-transform-object-assign": "~6.22.0",
+    "babel-preset-es2015": "~6.24.1",
+    "colors": "~1.1.2",
+    "consolidate": "~0.14.5",
+    "eslint": "~4.7.1",
+    "eslint-config-standard": "~10.2.1",
+    "eslint-plugin-import": "~2.7.0",
+    "eslint-plugin-node": "~5.1.0",
+    "eslint-plugin-promise": "~3.5.0",
+    "eslint-plugin-standard": "~3.0.1",
+    "fuse-box": "~2.2.0",
+    "node-sass": "~4.5.3",
+    "nodemon": "~1.12.1",
+    "pug-lint": "~2.5.0",
+    "typescript": "~2.5.2",
+    "uglify-es": "~3.1.1",
+    "velocity-animate": "~1.5.0",
+    "vue": "~2.4.4",
+    "vue-resource": "~1.3.4",
+    "vue-template-compiler": "~2.4.4",
+    "vue-template-es2015-compiler": "~1.5.3",
+    "vuex": "~2.4.0",
+    "yargs": "~9.0.1"
+  }
+}
