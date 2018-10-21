@@ -50,8 +50,8 @@ const ALIASES = {
 // ======================================================
 
 let fuse = fsbx.FuseBox.init({
-  homeDir: './client',
-  output: './assets/js/$name.js',
+  homeDir: './src',
+  output: './public/js/$name.js',
   alias: ALIASES,
   target: 'browser',
   plugins: [
@@ -85,23 +85,15 @@ if (dev) {
 fuse.run().then(() => {
   console.info(colors.green.bold('\nAssets compilation + bundling completed.'))
 
-  if (dev) {
-    nodemon({
-      exec: 'node index.js',
-      ignore: ['assets/', 'client/'],
-      ext: 'js json',
-      watch: ['index.js', 'controllers', 'middlewares'],
-      env: { 'NODE_ENV': 'development' }
-    })
-  } else {
+  if (!dev) {
     console.info(colors.yellow.bold('\nTranspiling vendor bundle...'))
-    let appCode = babel.transform(fs.readFileSync('./assets/js/app.js', 'utf8'), {
+    let appCode = babel.transform(fs.readFileSync('./public/js/app.js', 'utf8'), {
       babelrc: false,
       compact: false,
       filename: 'app.js',
       plugins: ['transform-object-assign']
     }).code
-    let vendorCode = babel.transform(fs.readFileSync('./assets/js/vendor.js', 'utf8'), {
+    let vendorCode = babel.transform(fs.readFileSync('./public/js/vendor.js', 'utf8'), {
       babelrc: false,
       comments: false,
       compact: false,
@@ -128,8 +120,8 @@ fuse.run().then(() => {
       ]
     }).code
     console.info(colors.yellow.bold('Minifing bundles...'))
-    fs.writeFileSync('./assets/js/vendor.js', uglify.minify(vendorCode).code, 'utf8')
-    fs.writeFileSync('./assets/js/app.js', uglify.minify(appCode).code, 'utf8')
+    fs.writeFileSync('./public/js/vendor.js', uglify.minify(vendorCode).code, 'utf8')
+    fs.writeFileSync('./public/js/app.js', uglify.minify(appCode).code, 'utf8')
     console.info(colors.green.bold('\nBUILD SUCCEEDED.'))
     return true
   }
